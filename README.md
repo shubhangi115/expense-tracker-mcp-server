@@ -32,6 +32,89 @@ https://mcp-server-expense-tracker.fastmcp.app/mcp
 
 > Protected by Horizon authentication.
 
+## Local Setup
+
+If remote access is unavailable (e.g., due to FastMCP Cloud free-plan authentication), the server can be run locally and connected to **Claude Desktop** or **MCP Inspector**.
+
+### Clone the repository
+
+```bash
+git clone https://github.com/shubhangi115/expense-tracker-mcp-server.git
+cd expense-tracker-mcp-server
+```
+
+### Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the MCP server
+
+```bash
+fastmcp run main.py
+```
+
+### Connect with Claude Desktop
+
+Add the following configuration to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "Expense Tracker": {
+      "command": "C:\\path\\to\\expense-tracker-mcp-server\\.venv\\Scripts\\fastmcp.exe",
+      "args": [
+        "run",
+        "C:\\path\\to\\expense-tracker-mcp-server\\main.py"
+      ],
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+Replace:
+
+```
+C:\path\to\expense-tracker-mcp-server
+```
+with the path where you cloned the repository.
+
+### Test with MCP Inspector
+
+```bash
+npx @modelcontextprotocol/inspector
+```
+
+Configure:
+
+```
+Transport: STDIO
+Command: fastmcp
+Arguments: run main.py
+```
+
+> **Note:**  Running the server locally provides full functionality with Claude Desktop and MCP Inspector.
+
 ## Setup Instructions
 
 ```bash
