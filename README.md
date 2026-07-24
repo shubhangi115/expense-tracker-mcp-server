@@ -14,9 +14,7 @@ This project is a cloud-deployed **Model Context Protocol (MCP)** server for man
 ## Tech Stack
 
 - **Language:** Python
-- **Protocol:** Model Context Protocol (MCP)
 - **Framework:** FastMCP
-- **Data Validation:** Pydantic
 - **Database:** SQLite
 - **AI Client:** Claude Desktop
 - **Testing:** MCP Inspector
