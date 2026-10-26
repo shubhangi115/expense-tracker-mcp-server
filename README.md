@@ -9,7 +9,6 @@ This project is a cloud-deployed **Model Context Protocol (MCP)** server for man
 - Budgeting assistant through MCP Prompts
 - MCP Resources for application metadata
 - Tested with Claude Desktop and MCP Inspector
-- Deployed on FastMCP Cloud
 
 ## Tech Stack
 
